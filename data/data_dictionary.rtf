@@ -1,0 +1,446 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}}
+{\*\generator Riched20 10.0.15063}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 # train.csv and test.csv\par
+\par
+price_doc: sale price (this is the target variable)\par
+id: transaction id\par
+timestamp: date of transaction\par
+full_sq: total area in square meters, including loggias, balconies and other non-residential areas\par
+life_sq: living area in square meters, excluding loggias, balconies and other non-residential areas\par
+floor: for apartments, floor of the building\par
+max_floor: number of floors in the building\par
+material: wall material\par
+build_year: year built\par
+num_room: number of living rooms\par
+kitch_sq: kitchen area\par
+state: apartment condition\par
+product_type: owner-occupier purchase or investment\par
+sub_area: name of the district\par
+\par
+The dataset also includes a collection of features about each property's surrounding neighbourhood, and some features that are constant across each sub area (known as a Raion). Most of the feature names are self explanatory, with the following notes. See below for a complete list.\par
+\par
+full_all: subarea population\par
+male_f, female_f: subarea population by gender\par
+young_*: population younger than working age\par
+work_*: working-age population\par
+ekder_*: retirement-age population\par
+n_m_\{all|male|female\}: population between n and m years old\par
+build_count_*: buildings in the subarea by construction type or year\par
+x_count_500: the number of x within 500m of the property\par
+x_part_500: the share of x within 500m of the property\par
+_sqm_: square meters\par
+cafe_count_d_price_p: number of cafes within d meters of the property that have an average bill under p RUB\par
+trc_: shopping malls\par
+prom_: industrial zones\par
+green_: green zones\par
+metro_: subway\par
+_avto_: distances by car\par
+mkad_: Moscow Circle Auto Road\par
+ttk_: Third Transport Ring\par
+sadovoe_: Garden Ring\par
+bulvar_ring_: Boulevard Ring\par
+kremlin_: City center\par
+zd_vokzaly_: Train station\par
+oil_chemistry_: Dirty industry\par
+ts_: Power plant\par
+\par
+\par
+# macro.csv\par
+\par
+A set of macroeconomic indicators, one for each date.\par
+\par
+timestamp: Transaction timestamp\par
+oil_urals: Crude Oil Urals ($/bbl)\par
+gdp_quart: GDP\par
+gdp_quart_growth: Real GDP growth\par
+cpi: Inflation - Consumer Price Index Growth\par
+ppi: Inflation - Producer Price index Growth\par
+gdp_deflator: Inflation - GDP deflator\par
+balance_trade: Trade surplus\par
+balance_trade_growth: Trade balance (as a percentage of previous year)\par
+usdrub: Ruble/USD exchange rate\par
+eurrub: Ruble/EUR exchange rate\par
+brent: London Brent ($/bbl)\par
+net_capital_export: Net import / export of capital\par
+gdp_annual: GDP at current prices\par
+gdp_annual_growth: GDP growth (in real terms)\par
+average_provision_of_build_contract: Provision by orders in Russia (for the developer)\par
+average_provision_of_build_contract_moscow: Provision by orders in Moscow (for the developer)\par
+rts: Index RTS / return\par
+micex: MICEX index / return\par
+micex_rgbi_tr: MICEX index for government bonds (MICEX RGBI TR) / yield\par
+micex_cbi_tr: MICEX Index corporate bonds (MICEX CBI TR) / yield\par
+deposits_value: Volume of household deposits\par
+deposits_growth: Volume growth of population's deposits\par
+deposits_rate: Average interest rate on deposits\par
+mortgage_value: Volume of mortgage loans\par
+mortgage_growth: Growth of mortgage lending\par
+mortgage_rate: Weighted average rate of mortgage loans\par
+grp: GRP of the subject of Russian Federation where Apartment is located\par
+grp_growth: Growth of gross regional product of the subject of the Russian Federation where Apartment is located\par
+income_per_cap: Average income per capita \par
+real_dispos_income_per_cap_growth: Growth in real disposable income of Population\par
+salary: Average monthly salary\par
+salary_growth: Growth of nominal wages\par
+fixed_basket: Cost of a fixed basket of consumer goods and services for inter-regional comparisons of purchasing power\par
+retail_trade_turnover: Retail trade turnover\par
+retail_trade_turnover_per_cap: Retail trade turnover per capita\par
+retail_trade_turnover_growth: Retail turnover (in comparable prices in% to corresponding period of previous year)\par
+labor_force: Size of labor force\par
+unemployment: Unemployment rate\par
+employment: Employment rate\par
+invest_fixed_capital_per_cap: Investments in fixed capital per capita\par
+invest_fixed_assets: Absolute volume of investments in fixed assets\par
+profitable_enterpr_share: Share of profitable enterprises\par
+unprofitable_enterpr_share: The share of unprofitable enterprises\par
+share_own_revenues: The share of own revenues in the total consolidated budget revenues\par
+overdue_wages_per_cap: Overdue wages per person\par
+fin_res_per_cap: The financial results of companies per capita\par
+marriages_per_1000_cap: Number of marriages per 1,000 people\par
+divorce_rate: The divorce rate / growth rate\par
+construction_value: Volume of construction work performed (million rubles)\par
+invest_fixed_assets_phys: The index of physical volume of investment in fixed assets (in comparable prices in% to the corresponding month of Previous year)\par
+pop_natural_increase: Rate of natural increase / decrease in Population (1,000 persons)\par
+pop_migration: Migration increase (decrease) of population\par
+pop_total_inc: Total population growth\par
+childbirth: Childbirth\par
+mortality: Mortality\par
+housing_fund_sqm: Housing Fund (sqm)\par
+lodging_sqm_per_cap: Lodging (sqm / pax)\par
+water_pipes_share: Plumbing availability (pax)\par
+baths_share: Bath availability (pax)\par
+sewerage_share: Canalization availability\par
+gas_share: Gas (mains, liquefied) availability\par
+hot_water_share: Hot water availability\par
+electric_stove_share: Electric heating for the floor\par
+heating_share: Heating availability\par
+old_house_share: Proportion of old and dilapidated housing, percent\par
+average_life_exp: Average life expectancy\par
+infant_mortarity_per_1000_cap: Infant mortality rate (per 1,000 children aged up to one year)\par
+perinatal_mort_per_1000_cap: Perinatal mortality rate (per 1,000 live births)\par
+incidence_population: Overall incidence of the total population\par
+rent_price_4+room_bus: rent price for 4-room apartment, business class\par
+rent_price_3room_bus: rent price for 3-room apartment, business class\par
+rent_price_2room_bus: rent price for 2-room apartment, business class\par
+rent_price_1room_bus: rent price for 1-room apartment, business class\par
+rent_price_3room_eco: rent price for 3-room apartment, econom class\par
+rent_price_2room_eco: rent price for 2-room apartment, econom class\par
+rent_price_1room_eco: rent price for 1-room apartment, econom class\par
+load_of_teachers_preschool_per_teacher: Load of teachers of preschool educational institutions (number of children per 100 teachers);\par
+child_on_acc_pre_school: Number of children waiting for the determination to pre-school educational institutions, for capacity of 100\par
+load_of_teachers_school_per_teacher: Load on teachers in high school (number of pupils in hugh school for 100 teachers)\par
+students_state_oneshift: Proportion of pupils in high schools with one shift, of the total number of pupils in high schools\par
+modern_education_share: Share of state (municipal) educational organizations, corresponding to modern requirements of education in the total number of high schools;\par
+old_education_build_share: The share of state (municipal) educational organizations, buildings are in disrepair and in need of major repairs of the total number.\par
+provision_doctors: Provision (relative number) of medical doctors in area\par
+provision_nurse: Provision of nursing staff\par
+load_on_doctors: The load on doctors (number of visits per physician)\par
+power_clinics: Capacity of outpatient clinics\par
+hospital_beds_available_per_cap: Availability of hospital beds per 100 000 persons\par
+hospital_bed_occupancy_per_year: Average occupancy rate of the hospital beds during a year\par
+provision_retail_space_sqm: Retail space\par
+provision_retail_space_modern_sqm: Provision of population with retail space of modern formats, square meter\par
+retail_trade_turnover_per_cap: Retail trade turnover per capita\par
+turnover_catering_per_cap: Turnover of catering industry per person\par
+theaters_viewers_per_1000_cap: Number of theaters viewers per 1000 population\par
+seats_theather_rfmin_per_100000_cap: Total number of seats in Auditorium of the Ministry of Culture Russian theaters per 100,000 population\par
+museum_visitis_per_100_cap: Number of visits to museums per 1000 of population\par
+bandwidth_sports: Capacity of sports facilities\par
+population_reg_sports_share: Proportion of population regularly doing  sports\par
+students_reg_sports_share: Proportion of pupils and students regularly doing sports in the total number\par
+apartment_build: City residential apartment construction\par
+apartment_fund_sqm: City residential apartment fund \par
+\par
+\par
+# Complete description of neighbourhood features\par
+\par
+area_m\tab Area mun. area, sq.m.\par
+raion_popul\tab Number of municipality population. district\par
+green_zone_part\tab Proportion of area of \'e2\'80\f1\'8b\f0\'e2\'80\f1\'8bgreenery in the total area\par
+indust_part\tab Share of industrial zones in area of \f0\'e2\'80\f1\'8b\f0\'e2\'80\f1\'8bthe total area\par
+children_preschool\tab Number of pre-school age population\par
+preschool_quota\tab Number of seats in pre-school organizations\par
+preschool_education_centers_raion\tab Number of pre-school  institutions\par
+children_school\tab Population of school-age children\par
+school_quota\tab Number of high school seats in area\par
+school_education_centers_raion\tab Number of  high school institutions\par
+school_education_centers_top_20_raion\tab Number of high schools of the top 20 best schools in Moscow\par
+hospital_beds_raion\tab Number of hospital beds for the district\par
+healthcare_centers_raion\tab Number of healthcare centers in district\par
+university_top_20_raion\tab Number of higher education institutions in the top ten ranking of the Federal rank\par
+sport_objects_raion\tab Number of higher education institutions\par
+additional_education_raion\tab Number of additional education organizations\par
+culture_objects_top_25\tab Presence of the key objects of cultural heritage (significant objects for the level of the RF constituent entities, city)\par
+culture_objects_top_25_raion\tab Number of  objects of cultural heritage\par
+shopping_centers_raion\tab Number of malls and shopping centres in district\par
+office_raion\tab Number of malls and shopping centres in district\par
+thermal_power_plant_raion\tab Presence of thermal power station in district\par
+incineration_raion\tab Presence of incinerators\par
+oil_chemistry_raion\tab Presence of dirty industries\par
+radiation_raion\tab Presence of radioactive waste disposal\par
+railroad_terminal_raion\tab Presence of the railroad terminal in district\par
+big_market_raion\tab Presence of large grocery / wholesale markets\par
+nuclear_reactor_raion\tab Presence of existing nuclear reactors\par
+detention_facility_raion\tab Presence of detention centers, prisons\par
+full_all\tab Total number of  population in the municipality\par
+male_f\tab Male population\par
+female_f\tab Female population\par
+young_all\tab Population younger than working age\par
+young_male\tab Male population younger than working age \par
+young_female\tab Feale population younger than working age \par
+work_all\tab Working-age population\par
+work_male\tab Male working-age population\par
+work_female\tab Female working-age population\par
+ekder_all\tab Population older than  working age\par
+ekder_male\tab Male population older than  working age\par
+ekder_female\tab Female population older than  working age\par
+0_6_all\tab Population aged 0-6\par
+0_6_male\tab Male population aged 0-7\par
+0_6_female\tab Female population aged 0-8\par
+7_14_all\tab Population aged  7-14\par
+7_14_male\tab Male population aged 7-14\par
+7_14_female\tab Female population aged 7-14\par
+0_17_all\tab Population aged 0-17\par
+0_17_male\tab Male population aged 0-17\par
+0_17_female\tab Female population aged 0-17\par
+16_29_all\tab Population aged 16-19\par
+16_29_male\tab Male population aged 16-19\par
+16_29_female\tab Female population aged 16-19\par
+0_13_all\tab Population aged 0-13\par
+0_13_male\tab Male population aged 0-13\par
+0_13_female\tab Female population aged 0-13\par
+raion_build_count_with_material_info\tab Number of building with material info in district\par
+build_count_block\tab Share of block buildings\par
+build_count_wood\tab Share of wood buildings\par
+build_count_frame\tab Share of frame buildings\par
+build_count_brick\tab Share of brick buildings\par
+build_count_monolith\tab Share of monolith buildings\par
+build_count_panel\tab Share of panel buildings\par
+build_count_foam\tab Share of foam buildings\par
+build_count_slag\tab Share of slag buildings\par
+build_count_mix\tab Share of mixed buildings\par
+raion_build_count_with_builddate_info\tab Number of building with build year info in district\par
+build_count_before_1920\tab Share of before_1920 buildings\par
+build_count_1921-1945\tab Share of 1921-1945 buildings\par
+build_count_1946-1970\tab Share of 1946-1970 buildings\par
+build_count_1971-1995\tab Share of 1971-1995 buildings\par
+build_count_after_1995\tab Share of after_1995 buildings\par
+7_14_male\tab Male population aged 7-14\par
+7_14_female\tab Female population aged 7-14\par
+0_17_all\tab Population aged 0-17\par
+0_17_male\tab Male population aged 0-17\par
+0_17_female\tab Female population aged 0-17\par
+16_29_all\tab Population aged 16-19\par
+16_29_male\tab Male population aged 16-19\par
+16_29_female\tab Female population aged 16-19\par
+0_13_all\tab Population aged 0-13\par
+0_13_male\tab Male population aged 0-13\par
+0_13_female\tab Female population aged 0-13\par
+metro_min_avto\tab Time to subway by car, min.\par
+metro_km_avto\tab Distance to subway by car, km\par
+metro_min_walk\tab Time to metro by foot\par
+metro_km_walk\tab Distance to the metro, km\par
+kindergarten_km\tab Distance to kindergarten\par
+school_km\tab Distance to high school \par
+park_km\tab Distance to park\par
+green_zone_km\tab Distance to green zone\par
+industrial_zone_km\tab Distance to industrial zone\par
+water_treatment_km\tab Distance to water treatment\par
+cemetery_km\tab Distance to the cemetery\par
+incineration_km\tab Distance to the incineration\par
+railroad_station_walk_km\tab Distance to the railroad station (walk)\par
+railroad_station_walk_min\tab Time to the railroad station (walk)\par
+ID_railroad_station_walk\tab Nearest railroad station id (walk)\par
+railroad_station_avto_km\tab Distance to the railroad station (avto)\par
+railroad_station_avto_min\tab Time to the railroad station (avto)\par
+ID_railroad_station_avto\tab Nearest railroad station id (avto)\par
+public_transport_station_km\tab Distance to the public transport station (walk)\par
+public_transport_station_min_walk\tab Time to the public transport station (walk)\par
+water_km\tab Distance to the water reservoir / river\par
+water_1line\tab First line to the river (150 m)\par
+mkad_km\tab Distance to MKAD (Moscow Circle Auto Road)\par
+ttk_km\tab Distance to the TTC (Third Transport Ring)\par
+sadovoe_km\tab Distance to the Garden Ring\par
+bulvar_ring_km\tab The distance to the Boulevard Ring\par
+kremlin_km\tab Distance to the city center (Kremlin)\par
+big_road1_km\tab Distance to Nearest major road\par
+ID_big_road1\tab Nearest big road id\par
+big_road1_1line\tab First line to the road (100 m for highwys, 250 m to MKAD)\par
+big_road2_km\tab The distance to next distant major road\par
+ID_big_road2\tab 2nd nearest big road id\par
+railroad_km\tab Distance to the railway / Moscow Central Ring / open areas Underground\par
+railroad_1line\tab First line to the railway (100 m)\par
+zd_vokzaly_avto_km\tab Distance to train station\par
+ID_railroad_terminal\tab Nearest railroad terminal id\par
+bus_terminal_avto_km\tab Distance to bus terminal (avto)\par
+ID_bus_terminal\tab Nearest bus terminal id\par
+oil_chemistry_km\tab Distance to dirty industries\par
+nuclear_reactor_km\tab Distance to nuclear reactor\par
+radiation_km\tab Distance to burial of radioactive waste\par
+power_transmission_line_km\tab Distance to power transmission line\par
+thermal_power_plant_km\tab Distance to thermal power plant\par
+ts_km\tab Distance to power station\par
+big_market_km\tab Distance to grocery / wholesale markets\par
+market_shop_km\tab Distance to markets and department stores\par
+fitness_km\tab Distance to fitness\par
+swim_pool_km\tab Distance to swimming pool\par
+ice_rink_km\tab Distance to ice palace\par
+stadium_km\tab Distance to stadium\par
+basketball_km\tab Distance to the basketball courts\par
+hospice_morgue_km\tab Distance to hospice/morgue\par
+detention_facility_km\tab Distance to detention facility\par
+public_healthcare_km\tab Distance to public healthcare\par
+university_km\tab Distance to universities\par
+workplaces_km\tab Distance to workplaces\par
+shopping_centers_km\tab Distance to shopping centers\par
+office_km\tab Distance to business centers/ offices\par
+additional_education_km\tab Distance to additional education\par
+preschool_km\tab Distance to preschool education organizations\par
+big_church_km\tab Distance to large church\par
+church_synagogue_km\tab Distance to Christian chirches and Synagogues\par
+mosque_km\tab Distance to mosques\par
+theater_km\tab Distance to theater\par
+museum_km\tab Distance to museums\par
+exhibition_km\tab Distance to exhibition\par
+catering_km\tab Distance to catering\par
+ecology\tab Ecological zone where the house is located\par
+green_part_500\tab The share of green zones in 500 meters zone\par
+prom_part_500\tab The share of industrial zones in 500 meters zone\par
+office_count_500\tab The number of office space in 500 meters zone\par
+office_sqm_500\tab The square of office space in 500 meters zone\par
+trc_count_500\tab The number of shopping malls in 500 meters zone\par
+trc_sqm_500\tab The square of shopping malls in 500 meters zone\par
+cafe_count_500\tab The number of cafes or restaurants in 500 meters zone\par
+cafe_sum_500_min_price_avg\tab Cafes and restaurant min average bill in 500 meters zone\par
+cafe_sum_500_max_price_avg\tab Cafes and restaurant max average bill in 500 meters zone\par
+cafe_avg_price_500\tab Cafes and restaurant average bill in 500 meters zone\par
+cafe_count_500_na_price\tab Cafes and restaurant bill N/A in 500 meters zone\par
+cafe_count_500_price_500\tab Cafes and restaurant bill, average under 500 in 500 meters zone\par
+cafe_count_500_price_1000\tab Cafes and restaurant bill, average  500-1000 in 500 meters zone\par
+cafe_count_500_price_1500\tab Cafes and restaurant bill, average  1000-1500 in 500 meters zone\par
+cafe_count_500_price_2500\tab Cafes and restaurant bill, average  1500-2500 in 500 meters zone\par
+cafe_count_500_price_4000\tab Cafes and restaurant bill, average  2500-4000 in 500 meters zone\par
+cafe_count_500_price_high\tab Cafes and restaurant bill, average  over 4000 in 500 meters zone\par
+big_church_count_500\tab The number of big churchs in 500 meters zone\par
+church_count_500\tab The number of churchs in 500 meters zone\par
+mosque_count_500\tab The number of mosques in 500 meters zone\par
+leisure_count_500\tab The number of leisure facilities in 500 meters zone\par
+sport_count_500\tab The number of sport facilities in 500 meters zone\par
+market_count_500\tab The number of markets in 500 meters zone\par
+green_part_1000\tab The share of green zones in 1000 meters zone\par
+prom_part_1000\tab The share of industrial zones in 1000 meters zone\par
+office_count_1000\tab The number of office space in 1000 meters zone\par
+office_sqm_1000\tab The square of office space in 1000 meters zone\par
+trc_count_1000\tab The number of shopping malls in 1000 meters zone\par
+trc_sqm_1000\tab The square of shopping malls in 1000 meters zone\par
+cafe_count_1000\tab The number of cafes or restaurants in 1000 meters zone\par
+cafe_sum_1000_min_price_avg\tab Cafes and restaurant min average bill in 1000 meters zone\par
+cafe_sum_1000_max_price_avg\tab Cafes and restaurant max average bill in 1000 meters zone\par
+cafe_avg_price_1000\tab Cafes and restaurant average bill in 1000 meters zone\par
+cafe_count_1000_na_price\tab Cafes and restaurant bill N/A in 1000 meters zone\par
+cafe_count_1000_price_500\tab Cafes and restaurant bill, average under 500 in 1000 meters zone\par
+cafe_count_1000_price_1000\tab Cafes and restaurant bill, average  500-1000 in 1000 meters zone\par
+cafe_count_1000_price_1500\tab Cafes and restaurant bill, average  1000-1500 in 1000 meters zone\par
+cafe_count_1000_price_2500\tab Cafes and restaurant bill, average  1500-2500 in 1000 meters zone\par
+cafe_count_1000_price_4000\tab Cafes and restaurant bill, average  2500-4000 in 1000 meters zone\par
+cafe_count_1000_price_high\tab Cafes and restaurant bill, average  over 4000 in 1000 meters zone\par
+big_church_count_1000\tab The number of big churchs in 1000 meters zone\par
+church_count_1000\tab The number of churchs in 1000 meters zone\par
+mosque_count_1000\tab The number of mosques in 1000 meters zone\par
+leisure_count_1000\tab The number of leisure facilities in 1000 meters zone\par
+sport_count_1000\tab The number of sport facilities in 1000 meters zone\par
+market_count_1000\tab The number of markets in 1000 meters zone\par
+green_part_1500\tab The share of green zones in 1500 meters zone\par
+prom_part_1500\tab The share of industrial zones in 1500 meters zone\par
+office_count_1500\tab The number of office space in 1500 meters zone\par
+office_sqm_1500\tab The square of office space in 1500 meters zone\par
+trc_count_1500\tab The number of shopping malls in 1500 meters zone\par
+trc_sqm_1500\tab The square of shopping malls in 1500 meters zone\par
+cafe_count_1500\tab The number of cafes or restaurants in 1500 meters zone\par
+cafe_sum_1500_min_price_avg\tab Cafes and restaurant min average bill in 1500 meters zone\par
+cafe_sum_1500_max_price_avg\tab Cafes and restaurant max average bill in 1500 meters zone\par
+cafe_avg_price_1500\tab Cafes and restaurant average bill in 1500 meters zone\par
+cafe_count_1500_na_price\tab Cafes and restaurant bill N/A in 1500 meters zone\par
+cafe_count_1500_price_500\tab Cafes and restaurant bill, average under 500 in 1500 meters zone\par
+cafe_count_1500_price_1000\tab Cafes and restaurant bill, average  500-1000 in 1500 meters zone\par
+cafe_count_1500_price_1500\tab Cafes and restaurant bill, average  1000-1500 in 1500 meters zone\par
+cafe_count_1500_price_2500\tab Cafes and restaurant bill, average  1500-2500 in 1500 meters zone\par
+cafe_count_1500_price_4000\tab Cafes and restaurant bill, average  2500-4000 in 1500 meters zone\par
+cafe_count_1500_price_high\tab Cafes and restaurant bill, average  over 4000 in 1500 meters zone\par
+big_church_count_1500\tab The number of big churchs in 1500 meters zone\par
+church_count_1500\tab The number of churchs in 1500 meters zone\par
+mosque_count_1500\tab The number of mosques in 1500 meters zone\par
+leisure_count_1500\tab The number of leisure facilities in 1500 meters zone\par
+sport_count_1500\tab The number of sport facilities in 1500 meters zone\par
+market_count_1500\tab The number of markets in 1500 meters zone\par
+green_part_2000\tab The share of green zones in 2000 meters zone\par
+prom_part_2000\tab The share of industrial zones in 2000 meters zone\par
+office_count_2000\tab The number of office space in 2000 meters zone\par
+office_sqm_2000\tab The square of office space in 2000 meters zone\par
+trc_count_2000\tab The number of shopping malls in 2000 meters zone\par
+trc_sqm_2000\tab The square of shopping malls in 2000 meters zone\par
+cafe_count_2000\tab The number of cafes or restaurants in 1500 meters zone\par
+cafe_sum_2000_min_price_avg\tab Cafes and restaurant min average bill in 2000 meters zone\par
+cafe_sum_2000_max_price_avg\tab Cafes and restaurant max average bill in 2000 meters zone\par
+cafe_avg_price_2000\tab Cafes and restaurant average bill in 2000 meters zone\par
+cafe_count_2000_na_price\tab Cafes and restaurant bill N/A in 2000 meters zone\par
+cafe_count_2000_price_500\tab Cafes and restaurant bill, average under 500 in 2000 meters zone\par
+cafe_count_2000_price_1000\tab Cafes and restaurant bill, average  500-1000 in 2000 meters zone\par
+cafe_count_2000_price_1500\tab Cafes and restaurant bill, average  1000-1500 in 2000 meters zone\par
+cafe_count_2000_price_2500\tab Cafes and restaurant bill, average  1500-2500 in 2000 meters zone\par
+cafe_count_2000_price_4000\tab Cafes and restaurant bill, average  2500-4000 in 2000 meters zone\par
+cafe_count_2000_price_high\tab Cafes and restaurant bill, average  over 4000 in 2000 meters zone\par
+big_church_count_2000\tab The number of big churchs in 2000 meters zone\par
+church_count_2000\tab The number of churchs in 2000 meters zone\par
+mosque_count_2000\tab The number of mosques in 2000 meters zone\par
+leisure_count_2000\tab The number of leisure facilities in 2000 meters zone\par
+sport_count_2000\tab The number of sport facilities in 2000 meters zone\par
+market_count_2000\tab The number of markets in 2000 meters zone\par
+green_part_3000\tab The share of green zones in 3000 meters zone\par
+prom_part_3000\tab The share of industrial zones in 3000 meters zone\par
+office_count_3000\tab The number of office space in 3000 meters zone\par
+office_sqm_3000\tab The square of office space in 3000 meters zone\par
+trc_count_3000\tab The number of shopping malls in 3000 meters zone\par
+trc_sqm_3000\tab The square of shopping malls in 3000 meters zone\par
+cafe_count_3000\tab The number of cafes or restaurants in 1500 meters zone\par
+cafe_sum_3000_min_price_avg\tab Cafes and restaurant min average bill in 3000 meters zone\par
+cafe_sum_3000_max_price_avg\tab Cafes and restaurant max average bill in 3000 meters zone\par
+cafe_avg_price_3000\tab Cafes and restaurant average bill in 3000 meters zone\par
+cafe_count_3000_na_price\tab Cafes and restaurant bill N/A in 3000 meters zone\par
+cafe_count_3000_price_500\tab Cafes and restaurant bill, average under 500 in 3000 meters zone\par
+cafe_count_3000_price_1000\tab Cafes and restaurant bill, average  500-1000 in 3000 meters zone\par
+cafe_count_3000_price_1500\tab Cafes and restaurant bill, average  1000-1500 in 3000 meters zone\par
+cafe_count_3000_price_2500\tab Cafes and restaurant bill, average  1500-2500 in 3000 meters zone\par
+cafe_count_3000_price_4000\tab Cafes and restaurant bill, average  2500-4000 in 3000 meters zone\par
+cafe_count_3000_price_high\tab Cafes and restaurant bill, average  over 4000 in 3000 meters zone\par
+big_church_count_3000\tab The number of big churchs in 3000 meters zone\par
+church_count_3000\tab The number of churchs in 3000 meters zone\par
+mosque_count_3000\tab The number of mosques in 3000 meters zone\par
+leisure_count_3000\tab The number of leisure facilities in 3000 meters zone\par
+sport_count_3000\tab The number of sport facilities in 3000 meters zone\par
+market_count_3000\tab The number of markets in 3000 meters zone\par
+green_part_5000\tab The share of green zones in 5000 meters zone\par
+prom_part_5000\tab The share of industrial zones in 5000 meters zone\par
+office_count_5000\tab The number of office space in 5000 meters zone\par
+office_sqm_5000\tab The square of office space in 5000 meters zone\par
+trc_count_5000\tab The number of shopping malls in 5000 meters zone\par
+trc_sqm_5000\tab The square of shopping malls in 5000 meters zone\par
+cafe_count_5000\tab The number of cafes or restaurants in 1500 meters zone\par
+cafe_sum_5000_min_price_avg\tab Cafes and restaurant min average bill in 5000 meters zone\par
+cafe_sum_5000_max_price_avg\tab Cafes and restaurant max average bill in 5000 meters zone\par
+cafe_avg_price_5000\tab Cafes and restaurant average bill in 5000 meters zone\par
+cafe_count_5000_na_price\tab Cafes and restaurant bill N/A in 5000 meters zone\par
+cafe_count_5000_price_500\tab Cafes and restaurant bill, average under 500 in 5000 meters zone\par
+cafe_count_5000_price_1000\tab Cafes and restaurant bill, average  500-1000 in 5000 meters zone\par
+cafe_count_5000_price_1500\tab Cafes and restaurant bill, average  1000-1500 in 5000 meters zone\par
+cafe_count_5000_price_2500\tab Cafes and restaurant bill, average  1500-2500 in 5000 meters zone\par
+cafe_count_5000_price_4000\tab Cafes and restaurant bill, average  2500-4000 in 5000 meters zone\par
+cafe_count_5000_price_high\tab Cafes and restaurant bill, average  over 4000 in 5000 meters zone\par
+big_church_count_5000\tab The number of big churchs in 5000 meters zone\par
+church_count_5000\tab The number of churchs in 5000 meters zone\par
+mosque_count_5000\tab The number of mosques in 5000 meters zone\par
+leisure_count_5000\tab The number of leisure facilities in 5000 meters zone\par
+sport_count_5000\tab The number of sport facilities in 5000 meters zone\par
+market_count_5000\tab The number of markets in 5000 meters zone\f0\par
+}
+ 
